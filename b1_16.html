@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <canvas id="myCanvas" width="200" height="100" ></canvas>
+</body>
+</html>
+<script>
+    let myRectangle = function (length, width){
+       this.length= length;
+       this.width=width;
+        this.getLength = function (length){
+            return this.length =length;
+        }
+        this.getWidth = function (width){
+            return this.width=width;
+        }
+        this.acreage = function (){
+            return length*width;
+        }
+        this.perimeter = function (){
+            return 2*(length+width)
+        }
+    }
+    let rectangle = new myRectangle(50,100)
+    let length= rectangle.length;
+    let width = rectangle.width;
+    let c = document.getElementById('myCanvas');
+    let ctx = c.getContext('2d');
+    ctx.fillStyle='blue';
+    ctx.fillRect(0,0,width,length);
+    width = rectangle.getWidth(40);
+    length= rectangle.getLength(105);
+    console.log('dien tich:'+rectangle.acreage());
+    console.log('chu vi:'+rectangle.perimeter())
+</script>

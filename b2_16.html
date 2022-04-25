@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+     let Temperature = function (numberTem){
+          this.numberTem = numberTem;
+          this.cTransferF = function (){
+              return 9/5*this.numberTem+32;
+          }
+          this.cTransferK= function (){
+              return  this.numberTem+273.15;
+          }
+     }
+     let temperature = new Temperature(15)
+     let numberTem = temperature.numberTem;
+     console.log(numberTem +'C  = '+ temperature.cTransferF() + ' F')
+     console.log(numberTem + 'C = '+ temperature.cTransferK() + ' K')
+</script>

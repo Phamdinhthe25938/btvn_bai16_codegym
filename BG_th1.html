@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+</body>
+</html>
+<script>
+    // let c = document.getElementById("myCanvas");
+    // let  ctx = c.getContext("2d");
+    // ctx.beginPath();
+    // ctx.arc(50,100,40,0,2*Math.PI);
+    // ctx.stroke()
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(20,100);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+    // <!--    vd 1:Class-->
+    function Student(id,name,address){
+        this.id= id;
+        this.name=name;
+        this.address= address;
+        this.getInfor = function (){
+            return 'id:'+this.id +'name:'+this.name +'address:'+this.address;
+        }
+    }
+    let student = new Student(1,'nguyen van A','hanoi');
+    console.log(student.getInfor());
+    //vd2 :object;
+    //        let student={
+    //             id:1,
+    //             name:'nguyen van A',
+    //             address:'ha noi',
+    //             getInfor:function (){
+    //                 return 'id:'+this.id +'name:'+this.name +'address:'+this.address;
+    //             }
+    //        }
+    //        console.log(student.name);
+    //        console.log(student.getInfor())
+
+    //vd3: bai doc 1
+    let person = {
+        name: ['Bob', 'Smith'],
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function () {
+            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name[0] + '.');
+        }
+    };
+    person.bio();
+    person.greeting()
+    // person.age = 45;
+    // person['name']['last'] = 'Cratchit'
+    person['eyes'] = 'hazel';
+    console.log(person['eyes'])
+    console.log(person)
+    //them thành phần vào đối tượng
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    person[myDataName] = myDataValue;
+    console.log(person.height)
+
+    let apple = new function() {
+        this.type = "macintosh";
+        this.color = "red";
+        this.getInfo = function () {
+            return this.color + ' ' + this.type + ' apple';
+        };
+    }
+    apple.color = "reddish";
+    alert(apple.getInfo());
+</script>

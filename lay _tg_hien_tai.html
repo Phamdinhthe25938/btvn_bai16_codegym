@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="color: blue" class="time"></div>
+    <img id="img" style="width:200px" src="https://internetviettel.vn/wp-content/uploads/2017/05/1-2.jpg" alt="">
+</body>
+</html>
+<script>
+     function dongHo (){
+        let date = new Date();
+        let hour = date.getHours();
+        let minutes= date.getMinutes();
+        let seconds = date.getSeconds();
+        setTimeout('dongHo()',1000)
+        document.querySelector('.time').innerHTML=hour +':'+minutes+':'+seconds;
+    }
+    dongHo();
+     let i=0;
+     function loadImg (){
+         let arrayImg= ['https://internetviettel.vn/wp-content/uploads/2017/05/1-2.jpg',
+             'https://bloganh.net/wp-content/uploads/2021/03/chup-anh-dep-anh-sang-min.jpg',
+             'https://baoquocte.vn/stores/news_dataimages/dieulinh/012020/29/15/nhung-buc-anh-dep-tuyet-voi-ve-tinh-ban.jpg']
+         document.getElementById('img').src=arrayImg[i];
+         i++;
+         if(i===arrayImg.length){
+             i=0
+         }
+         setTimeout('loadImg()',1000)
+     }
+     loadImg();
+
+</script>
